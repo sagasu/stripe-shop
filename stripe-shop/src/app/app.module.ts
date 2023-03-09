@@ -19,7 +19,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './pages/home/home.component';
+import HomeComponent from './pages/home/home.component';
+import { Child1Component } from './pages/home/child1/child1.component';
+import { Child2Component } from './pages/home/child2/child2.component';
 
 
 
@@ -27,7 +29,9 @@ import { HomeComponent } from './pages/home/home.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    Child1Component,
+    Child2Component
   ],
   imports: [
     BrowserModule,
