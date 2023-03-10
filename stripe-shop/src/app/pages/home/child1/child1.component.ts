@@ -1,12 +1,16 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, Input, OnChanges, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-child1',
   template: `
     <p>
       child1 works!
-     
+      {{title}}
     </p>
+    <button (click)="onSave()">save me</button>
+
+    <input type="text" [name]="title">
+
     <app-child2><app-child2>
   `,
   styles: [
@@ -17,6 +21,8 @@ export class Child1Component implements OnInit, OnChanges, DoCheck,AfterContentI
   constructor() {
     console.log('constructor works! Child1Component')
    }
+
+  title:string = 'Child one title';
 
   ngOnInit(): void {
     console.log('ngOnInit works! Child1Component')
@@ -43,5 +49,9 @@ export class Child1Component implements OnInit, OnChanges, DoCheck,AfterContentI
   }
   ngOnDestroy(): void {
     console.log('ngOnDestroy works! Child1Component')
+  }
+
+  onSave(): void{
+    console.log('onSave works! Child1Component')
   }
 }
